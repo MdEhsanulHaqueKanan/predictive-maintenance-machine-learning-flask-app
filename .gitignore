@@ -1,0 +1,14 @@
+# Python virtual environment
+.venv/
+__pycache__/
+
+# Model files - will be handled by Git LFS
+# We still add it here as a fallback safety measure
+*.joblib
+
+# VSCode settings
+.vscode/
+
+# Other common Python files to ignore
+*.pyc
+*.egg-info/

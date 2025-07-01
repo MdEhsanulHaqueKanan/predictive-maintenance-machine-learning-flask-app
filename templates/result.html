@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        
+        <!-- The result box class changes based on the prediction -->
+        <div class="box result-box {{ 'alert' if result.prediction != 'No Failure' else 'success' }}">
+            <h2>{{ result.emoji }} {{ result.status_text }} {{ result.emoji }}</h2>
+            <p><strong>Predicted Failure Type:</strong> {{ result.prediction }}</p>
+            <p><strong>Confidence:</strong> {{ result.confidence }}%</p>
+            <hr>
+            <p><strong>Recommendation:</strong> {{ result.recommendation }}</p>
+            {% if result.risk_factor %}
+                <p><strong>Primary Risk Factor:</strong> {{ result.risk_factor }}</p>
+            {% endif %}
+        </div>
+
+        <a href="/" class="btn back-btn">Make Another Prediction</a>
+    </div>
+</body>
+</html>

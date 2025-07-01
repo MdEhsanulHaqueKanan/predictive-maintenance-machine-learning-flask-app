@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Failure Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Machine Health Check</h1>
+        <p>Enter the current sensor readings to predict potential failures.</p>
+        
+        <div class="box form-box">
+            <form action="/predict" method="post">
+                <div class="form-group">
+                    <label for="type">Machine Type</label>
+                    <select name="type" id="type" required>
+                        <option value="L">Low Quality (L)</option>
+                        <option value="M">Medium Quality (M)</option>
+                        <option value="H">High Quality (H)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="air_temp">Air Temperature [K]</label>
+                    <input type="number" step="any" id="air_temp" name="air_temp" placeholder="e.g., 300.5" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="process_temp">Process Temperature [K]</label>
+                    <input type="number" step="any" id="process_temp" name="process_temp" placeholder="e.g., 310.2" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="rotational_speed">Rotational Speed [rpm]</label>
+                    <input type="number" step="any" id="rotational_speed" name="rotational_speed" placeholder="e.g., 1550" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="torque">Torque [Nm]</label>
+                    <input type="number" step="any" id="torque" name="torque" placeholder="e.g., 42.8" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="vibration">Vibration Levels</label>
+                    <input type="number" step="any" id="vibration" name="vibration" placeholder="e.g., 40.4" required min="0">
+                </div>
+                 <div class="form-group">
+                    <label for="op_hours">Operational Hours</label>
+                    <input type="number" step="any" id="op_hours" name="op_hours" placeholder="e.g., 9500" required min="0">
+                </div>
+
+                <button type="submit" class="btn">Check Machine Status</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

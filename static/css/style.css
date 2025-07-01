@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* --- Best Practice: Use CSS Variables for maintainability --- */
+:root {
+    --primary-color: #3498db;
+    --primary-hover-color: #2980b9;
+    --secondary-color: #7f8c8d;
+    --secondary-hover-color: #6c7a7b;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    --label-color: #34495e;
+    --success-color: #2ecc71;
+    --alert-color: #e74c3c;
+    --border-radius-lg: 12px;
+    --border-radius-md: 8px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555; /* Keeping this specific gray for paragraphs */
+    margin-bottom: 30px;
+}
+
+/* --- DRY Principle: Create a shared 'box' class --- */
+.box {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-box {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--label-color);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-md);
+    box-sizing: border-box; /* Important */
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: var(--border-radius-md);
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.back-btn {
+    margin-top: 20px;
+    background-color: var(--secondary-color);
+}
+
+.back-btn:hover {
+    background-color: var(--secondary-hover-color);
+}
+
+/* Result styles */
+.result-box {
+    /* Inherits from .box, just needs specific text alignment */
+    text-align: center;
+}
+.result-box h2 {
+    margin-top: 0;
+}
+.result-box hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 20px 0;
+}
+.result-box.success {
+    border-left: 10px solid var(--success-color);
+}
+.result-box.success h2 {
+    color: var(--success-color);
+}
+.result-box.alert {
+    border-left: 10px solid var(--alert-color);
+}
+.result-box.alert h2 {
+    color: var(--alert-color);
+}
