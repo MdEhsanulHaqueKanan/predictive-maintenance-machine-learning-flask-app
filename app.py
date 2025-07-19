@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 # --- BEST PRACTICE: Use an absolute path to load the model ---
 # This makes the app more robust
 basedir = os.path.abspath(os.path.dirname(__file__))
-model_path = os.path.join(basedir, 'saved_models', 'best_failure_predictor.joblib')
+model_path = os.path.join(basedir, 'saved_models', 'electrical_failure_model.joblib')
 
 # Load the trained model pipeline
 try:

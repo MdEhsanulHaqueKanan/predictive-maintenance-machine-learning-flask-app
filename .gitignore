@@ -2,9 +2,9 @@
 .venv/
 __pycache__/
 
-# Model files - will be handled by Git LFS
-# We still add it here as a fallback safety measure
+# Model files should not be committed to the repository
 *.joblib
+saved_models/
 
 # VSCode settings
 .vscode/
